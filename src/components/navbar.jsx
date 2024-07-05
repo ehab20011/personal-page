@@ -29,6 +29,12 @@ const Navbar = () => {
               <span>Projects</span>
             </Link>
           </li>
+          <li className="navbar__item">
+            <Link to="/hackathons" className="navbar__link">
+              <Folder />
+              <span>Hackathons</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>

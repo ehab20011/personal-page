@@ -5,6 +5,7 @@ import HomePage from './components/homepage';
 import Navbar from './components/navbar';
 import AnsysPage from './components/ansys';
 import ProjectsPage from './components/projects';
+import HackathonsPage from './components/hackathons';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/ansys" element={<AnsysPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/Hackathons" element={<HackathonsPage />} />
         </Routes>
       </div>
     </Router>
