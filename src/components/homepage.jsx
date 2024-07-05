@@ -1,8 +1,7 @@
 import React from 'react';
 import './homepage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJsSquare, faReact, faNodeJs, faJava, faPython, faGithub, faLinkedin, faLinux } from '@fortawesome/free-brands-svg-icons';
-
+import { faHtml5, faCss3Alt, faJsSquare, faReact, faNodeJs, faJava, faPython, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const codeContent = `
 /**
@@ -11,9 +10,17 @@ const codeContent = `
  */
 
 <span class="keyword">const</span> <span class="variable">experienceAtAnsys</span> = <span class="keyword">() =></span> {
-<span class="comment">// At Ansys, I had the opportunity to work with a comprehensive suite of engineering simulation software, including Fluent, Mechanical, Discovery, SpaceClaim, and SCADE, among others.</span>
-<span class="comment">// I was responsible for identifying and documenting bugs, performing both interactive and automated testing across various hardware and machine configurations to ensure software reliability and stability.</span>
-<span class="comment">// During my three rotations over the course of a year at Ansys, I gained extensive familiarity with the company's software, databases, and tech stack, while also learning valuable lessons in both technology and workplace culture.</span>
+  <span class="comment">// Performed interactive and automated testing of Ansys Software,</span>
+  <span class="comment">// ensuring its reliability and functionality.</span>
+
+  <span class="comment">// Debugged tests, created new defects, and reviewed existing</span>
+  <span class="comment">// defects within Ansys software.</span>
+
+  <span class="comment">// Collaborated with developers across different Ansys teams and</span>
+  <span class="comment">// effectively communicated findings.</span>
+
+  <span class="comment">// Utilized Azure cloud services for data storage and analysis</span>
+  <span class="comment">// to enhance testing efficiency and scalability.</span>
 
   <span class="function">console</span>.<span class="variable">log</span>(<span class="string">"Experience at Ansys"</span>);
 };
@@ -25,6 +32,7 @@ const HomePage = () => {
   return (
     <div className="homepage">
       <section className="section" style={{ backgroundImage: "url('/background.jpg')" }}>
+        <div className="overlay"></div>
         <div className="content console-intro">
           <p><span className="console-prompt">ehab@portfolio:~$</span> Hi, I'm Ehab Abdalla</p>
           <p><span className="console-prompt">ehab@portfolio:~$</span> Computer Science Student | Aspiring Software Engineer</p>
@@ -47,19 +55,19 @@ const HomePage = () => {
             <pre>
               <code dangerouslySetInnerHTML={{ __html: codeContent }} />
             </pre>
-            <a href="#ansys" className="read-more-button">Read More</a>
+            <a href="ansys" className="read-more-button">Read More</a>
           </div>
         </div>
       </section>
       <section className="section" style={{ backgroundImage: "url('/background2.JPG')" }}>
         <div className="content hackathons-content">
-            <h1>Hackathons</h1>
-            <img src="/hoya.png" alt="HoyaHacks Logo" className="hackathon-logo" />
+          <h1>Hackathons</h1>
+          <img src="/hoya.png" alt="HoyaHacks Logo" className="hackathon-logo" />
         </div>
-        </section>
-        <section className="section skills">
+      </section>
+      <section className="section skills">
         <div className="skills-content">
-          <h1>Technical Skills</h1>
+          <h1>My Skills</h1>
           <div className="skills-icons">
             <FontAwesomeIcon icon={faJava} size="4x" />
             <FontAwesomeIcon icon={faPython} size="4x" />
@@ -68,20 +76,18 @@ const HomePage = () => {
             <FontAwesomeIcon icon={faJsSquare} size="4x" />
             <FontAwesomeIcon icon={faReact} size="4x" />
             <FontAwesomeIcon icon={faNodeJs} size="4x" />
-            <FontAwesomeIcon icon={faLinux} size="4x" />
           </div>
           <div className="social-links">
-            <p>Check out my GitHub and Linkedin</p>
-            <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" className="social-link">
+            <p>Check out my tech projects:</p>
+            <a href="https://github.com/ehab20011" target="_blank" rel="noopener noreferrer" className="social-link">
               <FontAwesomeIcon icon={faGithub} size="2x" /> GitHub
             </a>
-            <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://www.linkedin.com/in/ehab-abdalla-04ab411b3/" target="_blank" rel="noopener noreferrer" className="social-link">
               <FontAwesomeIcon icon={faLinkedin} size="2x" /> LinkedIn
             </a>
           </div>
         </div>
       </section>
-
     </div>
   );
 };

@@ -1,213 +1,226 @@
 /* General styles for all sections */
 .section {
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .section .content {
-    max-width: 80%;
-    margin: auto;
-  }
-  
-  .section h1 {
-    font-size: 3em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 0;
-  }
-  
-  .section p {
-    font-size: 1.5em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-top: 1rem;
-  }
-  
-  /* Styles specific to the Ansys section */
-  .ansys-section .vscode-window {
-    width: 80%;
-    background: #1e1e1e;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-  }
-  
-  .vscode-title-bar {
-    background: #3c3c3c;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .vscode-controls {
-    display: flex;
-    align-items: center;
-  }
-  
-  .vscode-control {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin-right: 8px;
-  }
-  
-  .vscode-close {
-    background: #ff5f56;
-  }
-  
-  .vscode-minimize {
-    background: #ffbd2e;
-  }
-  
-  .vscode-maximize {
-    background: #27c93f;
-  }
-  
-  .vscode-title {
-    flex-grow: 1;
-    text-align: center;
-    color: #dcdcdc;
-    font-size: 1rem;
-  }
-  
-  .vscode-tabs {
-    background: #252526;
-    padding: 0.5rem;
-    display: flex;
-  }
-  
-  .vscode-tab {
-    color: #dcdcdc;
-    margin-right: 1rem;
-    padding: 0.5rem;
-    border-radius: 5px 5px 0 0;
-  }
-  
-  .vscode-tab.active {
-    background: #1e1e1e;
-  }
-  
-  .vscode-content {
-    padding: 1rem;
-  }
-  
-  .vscode-content pre {
-    background: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .vscode-content code {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1em;
-    line-height: 1.5;
-    display: block;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-  
-  /* Syntax highlighting */
-  .vscode-content .comment {
-    color: #6a9955; /* Green for comments */
-  }
-  
-  .vscode-content .string {
-    color: #ce9178; /* Red for strings */
-  }
-  
-  .vscode-content .keyword {
-    color: #569cd6; /* Blue for keywords */
-  }
-  
-  .vscode-content .function {
-    color: #dcdcaa; /* Yellow for functions */
-  }
-  
-  .vscode-content .variable {
-    color: #9cdcfe; /* Light blue for variables */
-  }
-  
-  .read-more-button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #0044cc;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-top: 1rem;
-  }
-  
-  .read-more-button:hover {
-    background-color: #003399;
-  }
-  
-  /* Specific styles for console intro */
-  .console-intro {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.5em;
-  }
-  
-  .console-prompt {
-    color: #00ff00;
-  }
-  
-  /* Skills section specific styles */
-  .skills {
-    background: #1d1d1d;
-    color: white;
-    padding: 2rem 0;
-    text-align: center;
-  }
-  
-  .skills-content {
-    display: inline-block;
-  }
-  
-  .skills-icons {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
-  }
-  .hackathon-logo {
-    width: 100px; /* Adjust size as needed */
-    height: auto;
-    margin-top: 1rem;
-  }
-  .social-links {
-    margin-top: 2rem;
-    text-align: center;
-  }
-  
-  .social-link {
-    margin: 0 1rem;
-    color: white;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.3s;
-  }
-  
-  .social-link:hover {
-    color: #0073b1; /* LinkedIn blue color for hover effect */
-  }
-  
-  .social-link svg {
-    transition: transform 0.3s;
-  }
-  
-  .social-link:hover svg {
-    transform: scale(1.1);
-  }
-  
-  
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+  z-index: 1;
+}
+
+.section .content {
+  position: relative;
+  z-index: 2;
+  max-width: 80%;
+  margin: auto;
+}
+
+.section h1 {
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.section p {
+  font-size: 1.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 1rem;
+}
+
+/* Styles specific to the Ansys section */
+.ansys-section .vscode-window {
+  width: 80%;
+  background: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.vscode-title-bar {
+  background: #3c3c3c;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vscode-controls {
+  display: flex;
+  align-items: center;
+}
+
+.vscode-control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.vscode-close {
+  background: #ff5f56;
+}
+
+.vscode-minimize {
+  background: #ffbd2e;
+}
+
+.vscode-maximize {
+  background: #27c93f;
+}
+
+.vscode-title {
+  flex-grow: 1;
+  text-align: center;
+  color: #dcdcdc;
+  font-size: 1rem;
+}
+
+.vscode-tabs {
+  background: #252526;
+  padding: 0.5rem;
+  display: flex;
+}
+
+.vscode-tab {
+  color: #dcdcdc;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px 5px 0 0;
+}
+
+.vscode-tab.active {
+  background: #1e1e1e;
+}
+
+.vscode-content {
+  padding: 1rem;
+}
+
+.vscode-content pre {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vscode-content code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  line-height: 1.5;
+  display: block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Syntax highlighting */
+.vscode-content .comment {
+  color: #6a9955; /* Green for comments */
+}
+
+.vscode-content .string {
+  color: #ce9178; /* Red for strings */
+}
+
+.vscode-content .keyword {
+  color: #569cd6; /* Blue for keywords */
+}
+
+.vscode-content .function {
+  color: #dcdcaa; /* Yellow for functions */
+}
+
+.vscode-content .variable {
+  color: #9cdcfe; /* Light blue for variables */
+}
+
+.read-more-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #0044cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.read-more-button:hover {
+  background-color: #003399;
+}
+
+/* Specific styles for console intro */
+.console-intro {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5em;
+}
+
+.console-prompt {
+  color: #00ff00;
+}
+
+/* Skills section specific styles */
+.skills {
+  background: #1d1d1d;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.skills-content {
+  display: inline-block;
+}
+
+.skills-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.hackathon-logo {
+  width: 100px; 
+  height: auto;
+  margin-top: 1rem;
+}
+
+.social-links {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.social-link {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #0073b1; 
+}
+
+.social-link svg {
+  transition: transform 0.3s;
+}
+
+.social-link:hover svg {
+  transform: scale(1.1);
+}

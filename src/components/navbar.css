@@ -1,137 +1,115 @@
 /* navbar.css */
 :root {
-    --border-radius: 10px;
-    --spacer: 1rem;
-    --primary: #C4151C;
-    --text: #fff;
-    --link-height: calc(var(--spacer) * 3.5);
-    --timing: 250ms;
-    --transition: var(--timing) ease all;
-    --link-width: 10rem;
-  }
-  
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
-  
-  body {
-    background: #000 url(https://unsplash.it/1600/1000/?random);
-    background-size: cover;
-    background-position: center;
-    font-family: 'Open Sans', sans-serif;
-    margin: 0; /* Ensure no default margin on the body */
-    padding-top: 60px; /* Add padding to avoid overlap with the fixed navbar */
-  }
-  
-  .header {
-    position: fixed; /* Make the header stick to the top */
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #000; /* Solid dark color */
-    color: var(--text);
-    padding: 0 calc(var(--spacer) * 2);
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
-    height: 6rem;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    z-index: 1000; /* Ensure it is on top of other elements */
-  }
-  
-  .header__logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text);
-  }
-  
-  .logo-img {
-    height: 4rem; /* Adjust the height as needed */
-  }
-  
-  .navbar {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  
+  --border-radius: 10px;
+  --spacer: 1rem;
+  --primary: #C4151C;
+  --text: #fff;
+  --link-height: calc(var(--spacer) * 3.5);
+  --timing: 250ms;
+  --transition: var(--timing) ease all;
+  --link-width: 10rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+body {
+  background: #000 url(https://unsplash.it/1600/1000/?random);
+  background-size: cover;
+  background-position: center;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0; /* Ensure no default margin on the body */
+  padding-top: 60px; /* Add padding to avoid overlap with the fixed navbar */
+}
+
+.header {
+  position: fixed; /* Make the header stick to the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #000; /* Solid dark color */
+  color: var(--text);
+  padding: 0 calc(var(--spacer) * 2);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensure space between logo and navbar */
+  z-index: 1000; /* Ensure it is on top of other elements */
+}
+
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.logo-img {
+  height: 4rem; 
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.navbar__menu {
+  position: relative;
+  display: flex;
+  justify-content: space-between; /* Ensure items are evenly spaced */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar__item {
+  margin: -1rem; 
+}
+
+.navbar__link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  height: var(--link-height);
+  width: var(--link-width);
+  color: var(--text);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 500ms ease all;
+}
+
+.navbar__link svg {
+  transition: 500ms ease all;
+}
+
+.navbar__link:hover svg {
+  stroke: var(--primary);
+}
+
+.navbar:not(:hover) .navbar__link:focus,
+.navbar__link:hover span {
+  opacity: 1;
+  transform: translate(0);
+}
+
+@media screen and (max-width: 768px) {
   .navbar__menu {
-    position: relative;
-    display: flex;
-    margin-left: 1400px;
-  }
-  
-  .navbar__link {
-    position: relative;
-    display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    align-items: center;
-    justify-content: center;
-    height: var(--link-height);
-    width: var(--link-width);
-    color: var(--text);
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: 500ms ease all;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
   }
-  
-  .navbar__link svg {
-    transition: 500ms ease all;
+
+  .navbar__item {
+    width: 100%;
   }
-  
-  .navbar__link:hover svg {
-    stroke: var(--primary);
+
+  .navbar__link {
+    width: 100%;
+    text-align: left;
+    padding: var(--spacer);
   }
-  
-  .navbar:not(:hover) .navbar__link:focus,
-  .navbar__link:hover span {
-    opacity: 1;
-    transform: translate(0);
-  }
-  
-  @media screen and (max-width: 768px) {
-    .navbar__menu {
-      flex-direction: column;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-    }
-  
-    .navbar__item {
-      width: 100%;
-    }
-  
-    .navbar__link {
-      width: 100%;
-      text-align: left;
-      padding: var(--spacer);
-    }
-    .social-links {
-        margin-top: 2rem;
-        text-align: center;
-      }
-      
-      .social-link {
-        margin: 0 1rem;
-        color: white;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        transition: color 0.3s;
-      }
-      
-      .social-link:hover {
-        color: #0073b1; /* LinkedIn blue color for hover effect */
-      }
-      
-      .social-link svg {
-        transition: transform 0.3s;
-      }
-      
-      .social-link:hover svg {
-        transform: scale(1.1);
-      }
-      
-  }
-  
+}

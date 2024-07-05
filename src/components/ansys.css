@@ -1,0 +1,141 @@
+/* General styles for all sections */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+p, ul, li {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.ansys-page {
+    background-image: url('/public/ansys2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Ensure it covers the full height */
+    padding: 2rem;
+    color: #333; /* Darker color for better contrast */
+}
+
+.section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff; /* Change to white for better contrast */
+    padding: 2rem;
+    margin: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for a professional look */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-section {
+    background: none;
+    overflow: hidden;
+}
+
+.video-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+    z-index: 1;
+}
+
+.video-section .ansys-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.video-section .content {
+    position: relative;
+    z-index: 2;
+    max-width: 80%;
+    margin: auto;
+}
+
+.video-section h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.video-section p {
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 1rem;
+}
+
+.skill-img-small {
+    width: 50%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 1rem 0; /* Add some margin for spacing */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform, box-shadow, and filter */
+}
+
+.skill-img-small:hover {
+    transform: scale(1.05); /* Slight scale on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+
+
+.skill-img-small-small {
+    width: 8%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 1rem 0; /* Add some margin for spacing */
+    border-radius: 8px;
+}
+#skills-developed {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900; /* Heavier font weight for a stronger impact */
+    color: #ffcc00; /* A vibrant yellow color */
+    font-size: 4em; /* Larger font size for prominence */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Softer, larger text shadow */
+    margin: 1rem 0; /* Margin for spacing */
+    letter-spacing: 0.05em; /* Slight letter spacing for readability */
+    text-transform: uppercase; /* Make all letters uppercase for a bold title effect */
+}
+
+#subtitle{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 1000;
+    color: Yellow; /* Example color */
+    font-size: 2em; /* Example size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Example text shadow */
+    margin: 1rem 0; /* Example margin */
+}
+#titles{
+    color:yellow;
+}
+.image-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 3rem; 
+}
+.skill-img-extra-small{
+    width: 13%;
+    border-radius: 10%;
+}

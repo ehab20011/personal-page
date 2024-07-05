@@ -1,6 +1,7 @@
 import React from 'react';
 import './navbar.css';
 import { Home, Folder } from 'react-feather';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -10,15 +11,23 @@ const Navbar = () => {
       </div>
       <nav className="navbar">
         <ul className="navbar__menu">
-            <a href="#home" className="navbar__link">
-              <Home />
-              <span>Ansys</span>
-            </a>
           <li className="navbar__item">
-            <a href="#projects" className="navbar__link">
+            <Link to="/" className="navbar__link">
+              <Home />
+              <span>Home</span>
+            </Link>
+          </li>
+          <li className="navbar__item">
+            <Link to="/ansys" className="navbar__link">
+              <Folder />
+              <span>Ansys</span>
+            </Link>
+          </li>
+          <li className="navbar__item">
+            <Link to="/projects" className="navbar__link">
               <Folder />
               <span>Projects</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
