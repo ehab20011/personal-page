@@ -1,7 +1,8 @@
 import React from 'react';
 import './homepage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJsSquare, faReact, faNodeJs, faJava, faPython, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
+import { faHtml5, faCss3Alt, faJsSquare, faReact, faNodeJs, faJava, faPython, faGithub, faLinkedin, faSquarePiedPiper, faHotjar } from '@fortawesome/free-brands-svg-icons';
 
 const codeContent = `
 /**
@@ -38,6 +39,7 @@ const HomePage = () => {
           <p><span className="console-prompt">ehab@portfolio:~$</span> Computer Science Student | Aspiring Software Engineer</p>
         </div>
       </section>
+
       <section className="section ansys-section" style={{ backgroundImage: "url('/ansysbackground.jpg')" }}>
         <div className="vscode-window">
           <div className="vscode-title-bar">
@@ -59,12 +61,17 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
       <section className="section" style={{ backgroundImage: "url('/background2.JPG')" }}>
         <div className="content hackathons-content">
           <h1>Hackathons</h1>
           <img src="/hoya.png" alt="HoyaHacks Logo" className="hackathon-logo" />
+          <div>
+            <a href="hackathons" className="read-more-button">Read More</a>
+          </div>
         </div>
       </section>
+
       <section className="section skills">
         <div className="skills-content">
           <h1>My Skills</h1>
@@ -78,12 +85,18 @@ const HomePage = () => {
             <FontAwesomeIcon icon={faNodeJs} size="4x" />
           </div>
           <div className="social-links">
-            <p>Check out my tech projects:</p>
+            <p>Check me out:</p>
             <a href="https://github.com/ehab20011" target="_blank" rel="noopener noreferrer" className="social-link">
               <FontAwesomeIcon icon={faGithub} size="2x" /> GitHub
             </a>
             <a href="https://www.linkedin.com/in/ehab-abdalla-04ab411b3/" target="_blank" rel="noopener noreferrer" className="social-link">
               <FontAwesomeIcon icon={faLinkedin} size="2x" /> LinkedIn
+            </a>
+            <Link to="/projects" className="social-link">
+                <FontAwesomeIcon icon={faHotjar} size="2x" /> Projects
+            </Link>
+            <a href="https://docs.google.com/document/d/1QTjmD26zem_a9rBt7wNW2ozxLv8ffOpMup8iD7Hl1yE/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="social-link">
+              <FontAwesomeIcon icon={faSquarePiedPiper} size="2x" /> Resume
             </a>
           </div>
         </div>
