@@ -1,7 +1,8 @@
 import React from 'react';
 import './projects.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faReact, faNodeJs, faJsSquare, faHtml5, faCss3Alt, faPython } from '@fortawesome/free-brands-svg-icons';
+import { faDatabase, faShieldAlt, faCogs  } from '@fortawesome/free-solid-svg-icons';
 
 const ProjectsPage = () => {
   const projects = [
@@ -15,6 +16,7 @@ const ProjectsPage = () => {
       ],
       githubLink: 'https://github.com/floresloyd/jobdock-app',
       image: '/jobdock.png',
+      technologies: [faReact, faNodeJs, faJsSquare, faDatabase, faShieldAlt],
     },
     {
       title: 'Wellness-Watcher',
@@ -26,6 +28,7 @@ const ProjectsPage = () => {
       ],
       githubLink: 'https://github.com/kathrynchoii/Wellness_Watcher',
       image: '/wellness.ico',
+      technologies: [faReact, faNodeJs, faJsSquare, faCss3Alt, faPython],
     },
     {
       title: 'Sueno Blanco',
@@ -37,6 +40,31 @@ const ProjectsPage = () => {
       ],
       githubLink: 'https://github.com/floresloyd/sueno_blanco_webpage',
       image: '/sb-logo.png',
+      technologies: [faHtml5, faCss3Alt, faJsSquare, faReact],
+    },
+    {
+      title: 'Online Grocery Store Database',
+      description: [
+        'Created a comprehensive database for an online grocery store using MySQL.',
+        'Implemented various tables including Customers, Staff, Products, Purchases, and more.',
+        'Developed complex SQL queries to retrieve and analyze customer and product data.',
+        'Implemented security measures to restrict access to sensitive data based on user roles.',
+      ],
+      githubLink: 'https://github.com/ehab20011/Project3/tree/main',
+      image: 'grocery.jpg',
+      technologies: [faDatabase, faShieldAlt, faJsSquare],
+    },
+    {
+      title: 'Multimedia Converter',
+      description: [
+        'Developed a versatile solution for converting multimedia files between different formats using C++ and Python.',
+        'Utilized C++ for efficient multimedia conversion and Python for creating a modern GUI.',
+        'Enabled users to easily select source files, specify target formats, and choose output locations.',
+        'Showcased technical proficiency and practical application that bridges backend efficiency and frontend usability.',
+      ],
+      githubLink: 'https://github.com/ehab20011/Ehab-Projects/tree/main/MultiMedia%20Converter',
+      image: 'mp4-to-mp3.jpg',
+      technologies: [faPython, faCogs],
     },
   ];
 
@@ -49,7 +77,9 @@ const ProjectsPage = () => {
       <div className="projects-container">
         {projects.map((project, index) => (
           <div key={index} className="project-card">
-            <img src={project.image} alt={project.title} className="project-image" />
+            <div className="project-image-container">
+              <img src={project.image} alt={project.title} className="project-image" />
+            </div>
             <div className="project-content">
               <h2>{project.title}</h2>
               <ul className="project-description">
@@ -57,9 +87,20 @@ const ProjectsPage = () => {
                   <li key={idx}>{point}</li>
                 ))}
               </ul>
-              <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="github-link">
-                <FontAwesomeIcon icon={faGithub} size="2x" />
-              </a>
+              <div className="project-links">
+                <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="github-link">
+                  <FontAwesomeIcon icon={faGithub} size="2x" />
+                </a>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+                <div className="tech-icons">
+                  {project.technologies.map((tech, idx) => (
+                    <FontAwesomeIcon key={idx} icon={tech} size="2x" className="tech-icon" />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         ))}
