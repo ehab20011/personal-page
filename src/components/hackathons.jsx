@@ -107,7 +107,7 @@ const HackathonsPage = () => {
             <div className="modal-content video-modal-content">
               <span className="close-button" onClick={closeVideo}>&times;</span>
               <video controls className="project-video">
-                <source src="/AnsysVideoTwo.mp4" type="video/mp4" />
+                <source src="/hoyahacksvideo.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

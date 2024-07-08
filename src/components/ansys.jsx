@@ -1,7 +1,5 @@
 import React from 'react';
 import './ansys.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJsSquare, faReact, faNodeJs, faJava, faPython, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const AnsysPage = () => {
   return (
@@ -115,7 +113,7 @@ const AnsysPage = () => {
       <section className="section video-section">
             <div className="overlay"></div>
                 <video className="ansys-video" autoPlay loop muted>
-                <source src="/AnsysVideoTwo.mp4" type="video/mp4" />
+                <source src="/sqlprojvideo.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
                 </video>
                 <div className="content">
