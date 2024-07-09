@@ -1,4 +1,10 @@
 /* General styles for all sections */
+.homepage{
+  background-image: url('/public/wallpaperhome.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .section {
   position: relative;
   min-height: 100vh;
@@ -20,7 +26,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+  background: rgba(0, 0, 0, 0.5); 
   z-index: 1;
 }
 

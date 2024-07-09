@@ -1,6 +1,6 @@
 import React from 'react';
 import './navbar.css';
-import { Home, Folder } from 'react-feather';
+import { Home, Briefcase, Code, Award } from 'react-feather';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -19,19 +19,19 @@ const Navbar = () => {
           </li>
           <li className="navbar__item">
             <Link to="/ansys" className="navbar__link">
-              <Folder />
+              <Briefcase />
               <span>Ansys</span>
             </Link>
           </li>
           <li className="navbar__item">
             <Link to="/projects" className="navbar__link">
-              <Folder />
+              <Code />
               <span>Projects</span>
             </Link>
           </li>
           <li className="navbar__item">
             <Link to="/hackathons" className="navbar__link">
-              <Folder />
+              <Award />
               <span>Hackathons</span>
             </Link>
           </li>
