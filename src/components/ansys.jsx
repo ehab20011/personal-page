@@ -103,34 +103,13 @@ const AnsysPage = () => {
             <p>This extensive experience with Python and JavaScript not only enhanced my technical skills in scripting and automation but also contributed significantly to the overall quality and reliability of our software products.</p>
             <div className="image-container">
                 <img src="/python.JPG" alt="Test Script Creation" className="skill-img skill-img-small" />
-                <img src="/JS.JPG" alt="Test Script Creation" className="skill-img skill-img-small" />
             </div>
           </div>
         </div>
       </section>
 
 
-      <section className="section video-section">
-            <div className="overlay"></div>
-                <video className="ansys-video" autoPlay loop muted>
-                <source src="/sqlprojvideo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-                </video>
-                <div className="content">
-                <h1 id="titles">Canonsburg HQ TestLab</h1>
-                <p>During my final rotation at Ansys, I was tasked with migrating our TestLab's local MySQL database from an outdated server to a new, more efficient machine. This involved extensive use of MySQL Workbench and Visual Studio Code. I cleaned and modified the existing machine to ensure that only necessary data and code were migrated, eliminating any redundant or obsolete information.</p>
-                <p>Additionally, I rewrote significant portions of the PHP code on the new server to streamline and optimize the system. This included improving the front-end to enhance usability and performance. This critical project ensured that our TestLab page at headquarters remained up-to-date, well-maintained, and efficient for our testing engineers.</p>       
-                <h2 id="subtitle">Skills Developed/Improved</h2>
-                <div className="image-container">
-                    <img src="/jspy.png" alt="Test Script Creation" className="skill-img skill-img-extra-small" />
-                    <img src="/php.JPG" alt="Test Script Creation" className="skill-img skill-img-extra-small" />
-                    <img src="/mysql.png" alt="Test Script Creation" className="skill-img skill-img-extra-small" />
-                    <img src="/Node.png" alt="Test Script Creation" className="skill-img skill-img-extra-small" />
-                    <img src="/htmlcssjs.jpg" alt="Test Script Creation" className="skill-img skill-img-extra-small" />
-                </div>
-
-            </div>
-      </section>
+     
 
       <section className="section video-section">
             <div className="overlay"></div>
