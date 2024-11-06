@@ -32,11 +32,11 @@ const codeContent = `
 const HomePage = () => {
   return (
     <div className="homepage">
-      <section className="section" style={{ backgroundImage: "url('/background.jpg')" }}>
+      <section className="section2" style={{ backgroundImage: "url('/linkedin.jpeg')" }}>
         <div className="overlay"></div>
         <div className="content console-intro">
           <p><span className="console-prompt">ehab@portfolio:~$</span> Hi, I'm Ehab Abdalla</p>
-          <p><span className="console-prompt">ehab@portfolio:~$</span> Computer Science Student | Aspiring Software Engineer</p>
+          <p><span className="console-prompt">ehab@portfolio:~$</span> Computer Science Student | Aspiring QA Engineer</p>
         </div>
       </section>
 
@@ -63,14 +63,27 @@ const HomePage = () => {
       </section>
 
       <section className="section" style={{ backgroundImage: "url('/background2.JPG')" }}>
+      <div className="hackathons-container">
+        <h1>Hackathons</h1>
         <div className="content hackathons-content">
-          <h1>Hackathons</h1>
-          <img src="/hoya.png" alt="HoyaHacks Logo" className="hackathon-logo" />
-          <div>
+          <div className="hackathon-item">
+            <img src="/hoya.png" alt="HoyaHacks Logo" className="hackathon-logo" />
+            <a href="hackathons" className="read-more-button">Read More</a>
+          </div>
+          
+          <div className="hackathon-item">
+            <img src="/learnailogo.jpg" alt="LearnAI Logo" className="hackathon-logo" />
+            <a href="hackathons" className="read-more-button">Read More</a>
+          </div>
+          
+          <div className="hackathon-item">
+            <img src="/RefuConnect.png" alt="RefuConnect Logo" className="hackathon-logo" />
             <a href="hackathons" className="read-more-button">Read More</a>
           </div>
         </div>
+      </div>
       </section>
+
 
       <section className="section skills">
         <div className="skills-content">

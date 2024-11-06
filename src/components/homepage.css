@@ -19,7 +19,20 @@
   padding: 0;
   margin: 0;
 }
-
+.section2 {
+  position: relative;
+  min-height: 100vh;
+  background-size: contain; /* Ensures the entire image is visible */
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
 .overlay {
   position: absolute;
   top: 0;
@@ -47,6 +60,24 @@
   font-size: 1.5em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin-top: 1rem;
+}
+
+.section2 .content {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+  margin-top: 500px;
+}
+
+.section2 h1 {
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.section2 p {
+  font-size: 1.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Styles specific to the Ansys section */
@@ -153,6 +184,29 @@
 .vscode-content .variable {
   color: #9cdcfe; /* Light blue for variables */
 }
+.hackathons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hackathons-content {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem; /* Space between each hackathon item */
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem; /* Space between the title and content */
+}
+.hackathons-content h1 {
+  margin-bottom: 2rem;
+}
+.hackathon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .read-more-button {
   display: inline-block;
@@ -162,7 +216,8 @@
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  text-align: center;
 }
 
 .read-more-button:hover {
@@ -199,11 +254,12 @@
 }
 
 .hackathon-logo {
-  width: 100px; 
+  width: 100px;
   height: auto;
-  margin-top: 1rem;
+  margin-bottom: 0.5rem;
   border-radius: 10px;
 }
+
 
 .social-links {
   margin-top: 2rem;
