@@ -1,6 +1,6 @@
 import React from 'react';
 import './navbar.css';
-import { Home, Briefcase, Code, Award } from 'react-feather';
+import { Home, Briefcase, Code, Award, Trello} from 'react-feather';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -21,6 +21,12 @@ const Navbar = () => {
             <Link to="/ansys" className="navbar__link">
               <Briefcase />
               <span>Ansys</span>
+            </Link>
+          </li>
+          <li className="navbar__item">
+            <Link to="/mobot" className="navbar__link">
+              <Trello />
+              <span>Mobot</span>
             </Link>
           </li>
           <li className="navbar__item">

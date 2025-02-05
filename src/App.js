@@ -6,6 +6,7 @@ import Navbar from './components/navbar';
 import AnsysPage from './components/ansys';
 import ProjectsPage from './components/projects';
 import HackathonsPage from './components/hackathons';
+import MobotPage from './components/mobot';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/ansys" element={<AnsysPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/Hackathons" element={<HackathonsPage />} />
+            <Route path="/mobot" element= {<MobotPage />} />
           </Routes>
         </div>
       </Router>

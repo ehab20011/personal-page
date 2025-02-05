@@ -106,11 +106,11 @@ const HackathonsPage = () => {
             </ul>
             <div className="button-container">
               <button onClick={openRefuGallery} className="gallery-button">Open Gallery</button>
-              <a href="https://github.com/ehab20011/LearnAI/tree/master" target="_blank" rel="noopener noreferrer" className="github-button">
+              <a href="https://github.com/ehab20011/p-hacks" target="_blank" rel="noopener noreferrer" className="github-button">
                 <FontAwesomeIcon icon={faGithub} size="2x" />
               </a>
               <button onClick={openRefuVideo} className="video-button">Project Video</button>
-              <a href="https://dorahacks.io/buidl/16951/" target="_blank" rel="noopener noreferrer" className="Devpost-button">
+              <a href="https://devpost.com/software/refuconnect-t1gu0i" target="_blank" rel="noopener noreferrer" className="Devpost-button">
               <img src="/devpostlogo.jpg" alt="DevPost Logo" className="devpost-logo" />
               </a>
             </div>

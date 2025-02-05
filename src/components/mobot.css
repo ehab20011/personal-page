@@ -1,0 +1,131 @@
+/* mobot.css */
+
+/* Reset or base styles (optional) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Main container */
+  .mobot-page {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Sections */
+  .section {
+    position: relative;
+    width: 100%;
+    padding: 5rem 2rem;
+  }
+  
+  /* Overlay to darken/blur video or background images */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+  }
+  
+  /* Video Section */
+  .video-section {
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mobot-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 80vh;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    object-fit: cover;
+  }
+  
+  /* Section content (text, images, etc.) */
+  .content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+  }
+  
+  /* Images */
+  .mobot-logo {
+    width: 200px;
+    margin-bottom: 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff; /* Adjust based on your background color */
+  }
+  
+  /* Overview Section (Example: lighter background or custom style) */
+  .overview-section {
+    background: #f3f3f3;
+    color: #333;
+  }
+  
+  .overview-section .content {
+    color: #333;
+    text-align: left;
+  }
+  
+  /* Takeaways Section with background image */
+  .takeaways-section {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+  
+  .takeaways-list {
+    text-align: left;
+    margin: 1.5rem auto 0 auto;
+    list-style: inside square;
+  }
+  
+  .takeaways-list li {
+    margin: 0.5rem 0;
+  }
+  
+  /* Wrap-up Section */
+  .wrap-up-section {
+    background: #fff;
+    color: #333;
+  }
+  
+  .wrap-up-section .content {
+    text-align: left;
+  }
+  
+  /* Responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .section {
+      padding: 2rem 1rem;
+    }
+  
+    .mobot-logo {
+      width: 150px;
+    }
+  
+    .section-title {
+      font-size: 1.5rem;
+    }
+  }
+  

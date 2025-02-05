@@ -36,7 +36,7 @@ const HomePage = () => {
         <div className="overlay"></div>
         <div className="content console-intro">
           <p><span className="console-prompt">ehab@portfolio:~$</span> Hi, I'm Ehab Abdalla</p>
-          <p><span className="console-prompt">ehab@portfolio:~$</span> Computer Science Student | Aspiring QA Engineer</p>
+          <p><span className="console-prompt">ehab@portfolio:~$</span> QA Engineer</p>
         </div>
       </section>
 
