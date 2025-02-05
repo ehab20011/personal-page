@@ -84,7 +84,7 @@ const HackathonsPage = () => {
         <div className="container">
           <header>
             <h1>RefuConnect - Hackathon Winning Project</h1>
-            <img src="/refuconnect.jpeg" alt="RefuConnect Logo" className="refuconnect-logo" />
+            <img src="/RefuConnect.jpeg" alt="RefuConnect Logo" className="refuconnect-logo" />
           </header>
           <section className="project-details">
             <h2>Project Overview</h2>
