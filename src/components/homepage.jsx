@@ -77,7 +77,7 @@ const HomePage = () => {
           </div>
           
           <div className="hackathon-item">
-            <img src="/RefuConnect.png" alt="RefuConnect Logo" className="hackathon-logo" />
+            <img src="/RefuConnect.jpeg" alt="RefuConnect Logo" className="hackathon-logo" />
             <a href="hackathons" className="read-more-button">Read More</a>
           </div>
         </div>

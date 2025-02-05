@@ -13,7 +13,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
 body {
-  background: #000 url(https://unsplash.it/1600/1000/?random);
   background-size: cover;
   background-position: center;
   font-family: 'Open Sans', sans-serif;

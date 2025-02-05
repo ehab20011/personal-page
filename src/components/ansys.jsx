@@ -14,9 +14,9 @@ const AnsysPage = () => {
         <div className="content">
           <img src="/ansys4.jpg" alt="Logo" className="logo-img" />
           <h1 id="titles">Ansys Experience</h1>
-          <p>At Ansys, I was able to use and test various Engineering Simulation Software ranging from Fluent, Mechanical, Discovery, SpaceClaim, SCADE, and many more.</p>
+          <p>At Ansys, I was able to use and test many different Engineering Simulation Software from Fluent, Mechanical, Discovery, SpaceClaim, SCADE, and many more.</p>
           <p>I filed bugs, performed interactive and automated testing on different hardware and machines, and ensured the software ran reliably and bug-free.</p>
-          <p>Spending three rotations and an entire year at Ansys familiarized me with the company's software, database, and tech stack, teaching me valuable lessons both tech-wise and work-culture-wise.</p>
+          <p>Spending three rotations and an entire year at Ansys familiarized me with the company's software, database, and tech stack, teaching me great lessons both tech-wise and work-culture-wise.</p>
         </div>
       </section>
 
