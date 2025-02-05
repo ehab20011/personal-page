@@ -17,14 +17,10 @@ p, ul, li {
 }
 
 .ansys-page {
-    background-image: url('/public/ansys2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh; /* Ensure it covers the full height */
-    padding: 2rem;
-    color: #333; /* Darker color for better contrast */
+    background-color: black;
+    background: none !important;
 }
+
 
 .section {
     position: relative;
