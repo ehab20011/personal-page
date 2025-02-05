@@ -34,7 +34,7 @@ const HomePage = () => {
     <div className="homepage">
       <section className="section2" style={{ backgroundImage: "url('/linkedin.jpeg')" }}>
         <div className="overlay"></div>
-        <div className="content console-intro">
+        <div className="content console-intro"> 
           <p><span className="console-prompt">ehab@portfolio:~$</span> Hi, I'm Ehab Abdalla</p>
           <p><span className="console-prompt">ehab@portfolio:~$</span> QA Engineer</p>
         </div>
