@@ -34,9 +34,15 @@ pipeline {
                     sh '''
                     git config --global user.email "your-email@example.com"
                     git config --global user.name "Ehab Abdalla"
-                    git add .
-                    git commit -m "Automated build commit from Jenkins"
-                    git push origin main
+
+                    # Check if there are changes before committing
+                    if ! git diff --quiet; then
+                        git add .
+                        git commit -m "Automated build commit from Jenkins"
+                        git push origin master
+                    else
+                        echo "No changes detected, skipping commit and push."
+                    fi
                     '''
                 }
             }
