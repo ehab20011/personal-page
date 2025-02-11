@@ -119,7 +119,7 @@ const AnsysPage = () => {
                 </video>
                 <div className="content">
                 <h1 id="titles">At Ansys</h1>
-                <p>In addition to the technical skills I acquired, I honed my ability to communicate effectively with other engineers using Microsoft Teams, and I became proficient with various Ansys applications and websites such as SharePoint and Ansys HRIS. I also enhanced my skills in Microsoft Word, Excel, and PowerPoint.</p>
+                <p>In addition to the technical skills I acquired at Ansys, I improved my ability to communicate effectively with other engineers using Microsoft Teams, and I became proficient with various Ansys applications and websites such as SharePoint and Ansys HRIS. I also enhanced my skills in Microsoft Word, Excel, and PowerPoint.</p>
                 <p>Furthermore, I gained experience with the Source Code Audit Tool and Ansys GitHub Enterprise, which provided valuable insights into the coding and programming culture at Ansys.</p>
             </div>
         </section>
