@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/ehab20011/personal-page.git'
+                git branch: 'main', url: 'https://github.com/ehab20011/personal-page.git'
             }
         }
 
@@ -28,10 +28,16 @@ pipeline {
             }
         }
 
-        stage('Deploy to GitHub Pages') {
+        stage('Push Changes to GitHub') {
             steps {
                 script {
-                    sh 'npm run deploy'
+                    sh '''
+                    git config --global user.email "your-email@example.com"
+                    git config --global user.name "Ehab Abdalla"
+                    git add .
+                    git commit -m "Automated build commit from Jenkins"
+                    git push origin main
+                    '''
                 }
             }
         }
@@ -39,10 +45,10 @@ pipeline {
 
     post {
         success {
-            echo "Build and deployment successful!"
+            echo "Changes pushed to GitHub. Vercel will now deploy automatically!"
         }
         failure {
-            echo "Build failed. Please check the logs."
+            echo "Build failed. Check logs."
         }
     }
 }
