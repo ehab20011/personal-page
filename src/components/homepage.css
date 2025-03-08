@@ -1,10 +1,12 @@
 /* General styles for all sections */
-.homepage{
+.homepage {
   background-image: url('/public/wallpaperhome.jpg'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
+
 .section {
   position: relative;
   min-height: 100vh;
@@ -16,13 +18,15 @@
   align-items: center;
   text-align: center;
   color: white;
-  padding: 0;
+  padding: 1rem;
   margin: 0;
+  overflow: hidden;
 }
+
 .section2 {
   position: relative;
   min-height: 100vh;
-  background-size: contain; /* Ensures the entire image is visible */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -30,9 +34,10 @@
   align-items: center;
   text-align: center;
   color: white;
-  padding: 0;
+  padding: 1rem;
   margin: 0;
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -43,50 +48,39 @@
   z-index: 1;
 }
 
-.section .content {
+.section .content,
+.section2 .content {
   position: relative;
   z-index: 2;
-  max-width: 80%;
+  width: 100%;
+  max-width: 1200px;
   margin: auto;
+  padding: 1rem;
 }
 
-.section h1 {
-  font-size: 3em;
+.section h1,
+.section2 h1 {
+  font-size: clamp(2em, 5vw, 3em);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin: 0;
 }
 
-.section p {
-  font-size: 1.5em;
+.section p,
+.section2 p {
+  font-size: clamp(1em, 3vw, 1.5em);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin-top: 1rem;
 }
 
-.section2 .content {
-  position: relative;
-  z-index: 2;
-  max-width: 90%;
-  margin-top: 500px;
-}
-
-.section2 h1 {
-  font-size: 3em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin: 0;
-}
-
-.section2 p {
-  font-size: 1.5em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
 /* Styles specific to the Ansys section */
 .ansys-section .vscode-window {
-  width: 80%;
+  width: 100%;
+  max-width: 1000px;
   background: #1e1e1e;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  margin: 1rem;
 }
 
 .vscode-title-bar {
@@ -109,29 +103,22 @@
   margin-right: 8px;
 }
 
-.vscode-close {
-  background: #ff5f56;
-}
-
-.vscode-minimize {
-  background: #ffbd2e;
-}
-
-.vscode-maximize {
-  background: #27c93f;
-}
+.vscode-close { background: #ff5f56; }
+.vscode-minimize { background: #ffbd2e; }
+.vscode-maximize { background: #27c93f; }
 
 .vscode-title {
   flex-grow: 1;
   text-align: center;
   color: #dcdcdc;
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 .vscode-tabs {
   background: #252526;
   padding: 0.5rem;
   display: flex;
+  overflow-x: auto;
 }
 
 .vscode-tab {
@@ -139,6 +126,7 @@
   margin-right: 1rem;
   padding: 0.5rem;
   border-radius: 5px 5px 0 0;
+  white-space: nowrap;
 }
 
 .vscode-tab.active {
@@ -147,6 +135,7 @@
 
 .vscode-content {
   padding: 1rem;
+  overflow-x: auto;
 }
 
 .vscode-content pre {
@@ -157,7 +146,7 @@
 
 .vscode-content code {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1em;
+  font-size: clamp(0.8em, 2vw, 1em);
   line-height: 1.5;
   display: block;
   white-space: pre-wrap;
@@ -165,125 +154,307 @@
 }
 
 /* Syntax highlighting */
-.vscode-content .comment {
-  color: #6a9955; /* Green for comments */
-}
+.vscode-content .comment { color: #6a9955; }
+.vscode-content .string { color: #ce9178; }
+.vscode-content .keyword { color: #569cd6; }
+.vscode-content .function { color: #dcdcaa; }
+.vscode-content .variable { color: #9cdcfe; }
 
-.vscode-content .string {
-  color: #ce9178; /* Red for strings */
-}
-
-.vscode-content .keyword {
-  color: #569cd6; /* Blue for keywords */
-}
-
-.vscode-content .function {
-  color: #dcdcaa; /* Yellow for functions */
-}
-
-.vscode-content .variable {
-  color: #9cdcfe; /* Light blue for variables */
-}
+/* Hackathons section */
 .hackathons-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem 1rem;
 }
 
 .hackathons-content {
   display: flex;
-  flex-direction: row;
-  gap: 5rem; /* Space between each hackathon item */
+  flex-wrap: wrap;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem; /* Space between the title and content */
+  margin-top: 2rem;
 }
-.hackathons-content h1 {
-  margin-bottom: 2rem;
-}
+
 .hackathon-item {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+.hackathon-logo {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 .read-more-button {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1.5rem;
   background-color: #0044cc;
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   margin-top: 0.5rem;
-  text-align: center;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  width: 100%;
+  max-width: 200px;
 }
 
 .read-more-button:hover {
   background-color: #003399;
+  transform: translateY(-2px);
 }
 
-/* Specific styles for console intro */
+/* Console intro */
 .console-intro {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1.5em;
+  font-size: clamp(1em, 3vw, 1.5em);
 }
 
 .console-prompt {
   color: #00ff00;
 }
 
-/* Skills section specific styles */
+/* Skills section */
 .skills {
   background: #1d1d1d;
   color: white;
-  padding: 2rem 0;
-  text-align: center;
+  padding: 4rem 1rem;
 }
 
 .skills-content {
-  display: inline-block;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .skills-icons {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
 }
 
-.hackathon-logo {
-  width: 100px;
+.skills-icons svg {
+  width: clamp(3rem, 10vw, 4rem);
   height: auto;
-  margin-bottom: 0.5rem;
-  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
+.skills-icons svg:hover {
+  transform: scale(1.1);
+  color: var(--primary);
+}
 
 .social-links {
-  margin-top: 2rem;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
 }
 
 .social-link {
-  margin: 0 1rem;
-  color: white;
-  text-decoration: none;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: color 0.3s;
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .social-link:hover {
-  color: #0073b1; 
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 .social-link svg {
-  transition: transform 0.3s;
+  width: clamp(1.2rem, 3vw, 2rem);
+  height: auto;
 }
 
-.social-link:hover svg {
-  transform: scale(1.1);
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .section2 .content {
+    margin-top: 0;
+  }
+
+  .hackathons-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hackathon-item {
+    width: 100%;
+    max-width: none;
+  }
+
+  .social-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .social-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .vscode-window {
+    margin: 0.5rem;
+  }
+
+  .skills-icons {
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section,
+  .section2 {
+    padding: 0.5rem;
+  }
+
+  .vscode-content code {
+    font-size: 0.8em;
+  }
+
+  .skills-icons svg {
+    width: 2.5rem;
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 400px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+}
+
+.console-intro {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(1.2em, 3vw, 1.8em);
+  color: white;
+}
+
+.console-prompt {
+  color: #00ff00;
+  margin-right: 1rem;
+}
+
+.typing-animation {
+  overflow: hidden;
+  border-right: 0.15em solid #00ff00;
+  white-space: nowrap;
+  margin: 0;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  color: #00ff00;
+  opacity: 0.7;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #00ff00 }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .hero-image {
+    max-width: 300px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .console-intro {
+    font-size: clamp(1em, 4vw, 1.4em);
+  }
+
+  .typing-animation {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-section {
+    padding: 1rem;
+  }
+
+  .hero-content {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .hero-image {
+    max-width: 250px;
+  }
 }

@@ -9,16 +9,23 @@
   
   /* Main container */
   .mobot-page {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
     line-height: 1.6;
+    background-color: black;
+    overflow-x: hidden;
   }
   
   /* Sections */
   .section {
     position: relative;
-    width: 100%;
-    padding: 5rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 2rem 1rem;
+    margin: 0;
   }
   
   /* Overlay to darken/blur video or background images */
@@ -26,19 +33,16 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.35);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
     z-index: 1;
   }
   
   /* Video Section */
   .video-section {
-    height: 80vh;
+    position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   
   .mobot-video {
@@ -46,7 +50,7 @@
     top: 50%;
     left: 50%;
     min-width: 100%;
-    min-height: 80vh;
+    min-height: 100%;
     width: auto;
     height: auto;
     transform: translate(-50%, -50%);
@@ -58,73 +62,162 @@
   .content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
-    color: #fff;
+    padding: 1rem;
   }
   
-  /* Images */
-  .mobot-logo {
-    width: 200px;
+  /* Typography */
+  h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 0 1.5rem 0;
+  }
+  
+  #titles {
+    color: #ffcc00;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  #subtitle {
+    color: #ffcc00;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  #skills-developed {
+    color: #ffcc00;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+  }
+  
+  p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.6;
     margin-bottom: 1rem;
   }
   
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #fff; /* Adjust based on your background color */
-  }
-  
-  /* Overview Section (Example: lighter background or custom style) */
-  .overview-section {
-    background: #f3f3f3;
-    color: #333;
-  }
-  
-  .overview-section .content {
-    color: #333;
-    text-align: left;
-  }
-  
-  /* Takeaways Section with background image */
-  .takeaways-section {
+  /* Skills Section */
+  .skills-section {
+    background-attachment: fixed;
     background-size: cover;
-    background-position: center;
+  }
+  
+  .skill {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .skill ul {
+    text-align: left;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .skill li {
+    margin-bottom: 0.5rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+  }
+  
+  /* Images */
+  .mobot-logo-img {
+    width: clamp(150px, 30%, 300px);
+    height: auto;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+  }
+  
+  .skill-img {
+    width: clamp(200px, 80%, 500px);
+    height: auto;
+    margin: 1.5rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .skill-img-small-small {
+    width: clamp(50px, 15%, 100px);
+    height: auto;
+    margin: 1rem 0;
+    border-radius: 8px;
+  }
+  
+  /* Mobile Optimizations */
+  @media (max-width: 768px) {
+    .section {
+      padding: 1rem;
+    }
+    
+    .skill {
+      padding: 1rem;
+    }
+    
+    .content {
+      padding: 0.5rem;
+    }
+    
+    ul {
+      padding-left: 1rem;
+    }
+  }
+  
+  /* Animations */
+  .skill-img:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Utility Classes */
+  .text-center {
+    text-align: center;
+  }
+  
+  .mb-2 {
+    margin-bottom: 2rem;
+  }
+  
+  /* Tech Icons */
+  .tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
+  .tech-icon {
+    font-size: 2rem;
+    color: #ffcc00;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .tech-icon:hover {
+    transform: scale(1.2);
+    opacity: 1;
     color: #fff;
   }
   
-  .takeaways-list {
-    text-align: left;
-    margin: 1.5rem auto 0 auto;
-    list-style: inside square;
-  }
-  
-  .takeaways-list li {
-    margin: 0.5rem 0;
-  }
-  
-  /* Wrap-up Section */
-  .wrap-up-section {
-    background: #fff;
-    color: #333;
-  }
-  
-  .wrap-up-section .content {
-    text-align: left;
-  }
-  
-  /* Responsiveness for smaller screens */
   @media (max-width: 768px) {
-    .section {
-      padding: 2rem 1rem;
+    .tech-icons {
+      gap: 1.5rem;
+      padding: 1rem;
     }
-  
-    .mobot-logo {
-      width: 150px;
-    }
-  
-    .section-title {
+    
+    .tech-icon {
       font-size: 1.5rem;
     }
   }

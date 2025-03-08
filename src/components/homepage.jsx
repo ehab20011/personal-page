@@ -32,11 +32,18 @@ const codeContent = `
 const HomePage = () => {
   return (
     <div className="homepage">
-      <section className="section2" style={{ backgroundImage: "url('/linkedin.jpeg')" }}>
-        <div className="overlay"></div>
-        <div className="content console-intro"> 
-          <p><span className="console-prompt">ehab@portfolio:~$</span> Hi, I'm Ehab Abdalla</p>
-          <p><span className="console-prompt">ehab@portfolio:~$</span> QA Engineer</p>
+      <section className="hero-section">
+        <div className="hero-content">
+          <div className="hero-image">
+            <img src="/linkedin.jpeg" alt="Ehab Abdalla" />
+          </div>
+          <div className="hero-text">
+            <div className="console-intro">
+              <p><span className="console-prompt">ehab@portfolio:~$</span> Hi, I'm Ehab Abdalla</p>
+              <p><span className="console-prompt">ehab@portfolio:~$</span> QA Engineer</p>
+              <p className="typing-animation">Welcome to my portfolio...</p>
+            </div>
+          </div>
         </div>
       </section>
 

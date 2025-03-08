@@ -6,21 +6,10 @@ body {
     box-sizing: border-box;
 }
 
-h1, h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-}
-
-p, ul, li {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-}
-
 .ansys-page {
     background-color: black;
-    background: none !important;
+    overflow-x: hidden;
 }
-
 
 .section {
     position: relative;
@@ -28,17 +17,13 @@ p, ul, li {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: #fff; /* Change to white for better contrast */
-    padding: 2rem;
-    margin: 1rem 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for a professional look */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    padding: 2rem 1rem;
+    margin: 0;
 }
 
 .video-section {
-    background: none;
+    position: relative;
     overflow: hidden;
 }
 
@@ -48,7 +33,7 @@ p, ul, li {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+    background: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
 
@@ -56,82 +41,135 @@ p, ul, li {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
     transform: translate(-50%, -50%);
     z-index: 0;
 }
 
-.video-section .content {
+.content {
     position: relative;
     z-index: 2;
-    max-width: 80%;
-    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
-.video-section h1 {
-    font-size: 3em;
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 0 1.5rem 0;
+}
+
+#titles {
+    color: #ffcc00;
+    font-size: clamp(2rem, 5vw, 3rem);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 0;
 }
 
-.video-section p {
-    font-size: 1.5em;
+#subtitle {
+    color: #ffcc00;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-top: 1rem;
 }
 
-.skill-img-small {
-    width: 50%; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: 1rem 0; /* Add some margin for spacing */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform, box-shadow, and filter */
+#skills-developed {
+    color: #ffcc00;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
 }
 
-.skill-img-small:hover {
-    transform: scale(1.05); /* Slight scale on hover */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
+/* Skills Section */
+.skills-section {
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.skill {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.skill ul {
+    text-align: left;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.skill li {
+    margin-bottom: 0.5rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+/* Images */
+.ansys-logo-img {
+    width: clamp(150px, 30%, 300px);
+    height: auto;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+.skill-img {
+    width: clamp(200px, 80%, 500px);
+    height: auto;
+    margin: 1.5rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
 
 .skill-img-small-small {
-    width: 8%; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: 1rem 0; /* Add some margin for spacing */
+    width: clamp(50px, 15%, 100px);
+    height: auto;
+    margin: 1rem 0;
     border-radius: 8px;
 }
-#skills-developed {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900; /* Heavier font weight for a stronger impact */
-    color: #ffcc00; /* A vibrant yellow color */
-    font-size: 4em; /* Larger font size for prominence */
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Softer, larger text shadow */
-    margin: 1rem 0; /* Margin for spacing */
-    letter-spacing: 0.05em; /* Slight letter spacing for readability */
-    text-transform: uppercase; /* Make all letters uppercase for a bold title effect */
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .section {
+        padding: 1rem;
+    }
+    
+    .skill {
+        padding: 1rem;
+    }
+    
+    .content {
+        padding: 0.5rem;
+    }
+    
+    ul {
+        padding-left: 1rem;
+    }
 }
 
-#subtitle{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 1000;
-    color: Yellow; /* Example color */
-    font-size: 2em; /* Example size */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Example text shadow */
-    margin: 1rem 0; /* Example margin */
+/* Animations */
+.skill-img:hover {
+    transform: scale(1.02);
 }
-#titles{
-    color:yellow;
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
 }
-.image-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    gap: 3rem; 
-}
-.skill-img-extra-small{
-    width: 13%;
-    border-radius: 10%;
+
+.mb-2 {
+    margin-bottom: 2rem;
 }

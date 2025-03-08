@@ -8,6 +8,9 @@
   --timing: 250ms;
   --transition: var(--timing) ease all;
   --link-width: 10rem;
+  --navbar-height: 4rem;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
@@ -16,99 +19,150 @@ body {
   background-size: cover;
   background-position: center;
   font-family: 'Open Sans', sans-serif;
-  margin: 0; /* Ensure no default margin on the body */
-  padding-top: 60px; /* Add padding to avoid overlap with the fixed navbar */
+  margin: 0;
+  padding-top: var(--navbar-height);
 }
 
 .header {
-  position: fixed; /* Make the header stick to the top */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: #000; /* Solid dark color */
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--glass-border);
   color: var(--text);
   padding: 0 calc(var(--spacer) * 2);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
-  height: 6rem;
+  height: var(--navbar-height);
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Ensure space between logo and navbar */
-  z-index: 1000; /* Ensure it is on top of other elements */
+  justify-content: space-between;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .header__logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--text);
+  display: flex;
+  align-items: center;
 }
 
 .logo-img {
-  height: 4rem; 
+  height: calc(var(--navbar-height) - 1rem);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.mobile-menu-btn svg {
+  width: 24px;
+  height: 24px;
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  height: 100%;
-  overflow: hidden;
 }
 
 .navbar__menu {
-  position: relative;
   display: flex;
-  justify-content: space-between; /* Ensure items are evenly spaced */
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  gap: 1rem;
 }
 
 .navbar__item {
-  margin: -1rem; 
+  margin: 0;
 }
 
 .navbar__link {
   position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
   align-items: center;
-  justify-content: center;
-  height: var(--link-height);
-  width: var(--link-width);
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
   color: var(--text);
   text-decoration: none;
   text-transform: uppercase;
-  transition: 500ms ease all;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius);
+}
+
+.navbar__link:hover {
+  background: var(--glass-bg);
 }
 
 .navbar__link svg {
-  transition: 500ms ease all;
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: all 0.3s ease;
 }
 
 .navbar__link:hover svg {
-  stroke: var(--primary);
-}
-
-.navbar:not(:hover) .navbar__link:focus,
-.navbar__link:hover span {
-  opacity: 1;
-  transform: translate(0);
+  color: var(--primary);
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 768px) {
-  .navbar__menu {
-    flex-direction: column;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+  .mobile-menu-btn {
+    display: block;
+    position: relative;
+    z-index: 1002;
   }
 
-  .navbar__item {
-    width: 100%;
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: calc(var(--navbar-height) + 1rem) 2rem 2rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar.open {
+    right: 0;
+  }
+
+  .header.menu-open {
+    background: transparent;
+    border-bottom: none;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
   }
 
   .navbar__link {
     width: 100%;
-    text-align: left;
-    padding: var(--spacer);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background: var(--glass-bg);
+  }
+
+  .navbar__link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
   }
 }
